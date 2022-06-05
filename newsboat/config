@@ -1,24 +1,53 @@
+browser "w3m %u"
+
+
+# # Colors from "gruvbox" colorscheme https://github.com/morhetz/gruvbox
+color article                              color223 color236
+color background                           color100 color236
+color info                                 color142 color235
+color listfocus                            color214 color239
+color listfocus_unread                     color214 color96
+color listnormal                           color246 color237
+color listnormal_unread                    color175 color237
+highlight article "^Feed:.*"               color175 color237
+highlight article "^Title:.*"              color214 color237 bold
+highlight article "^Author:.*"             color167 color237
+highlight article "^Link:.*"               color109 color237
+highlight article "^Date:.*"               color142 color237
+highlight article "\\[[0-9]\\+\\]"         color208 color237 bold
+highlight article "\\[[^0-9].*[0-9]\\+\\]" color167 color237 bold
+
+# color listnormal color208 color234
+# color listnormal_unread color244 color234 
+# color listfocus   color15 color0 blink
+# color info  red default bold
+# color listfocus_unread color166 color0 bold
+# color info color38 color235
+# color background color15 color0
+# color article color15 color0 
+
+# jk - move up/down
+unbind-key j
+unbind-key k
+bind-key j down
+bind-key k up
 
 
 
-https://stopa.io/feed.rss
+# hl - move in/out of feeds/articles
+bind-key h quit
+bind-key l open
 
-https://rsshub.app/blogs/paulgraham
+# q quits the program
+unbind-key q
+bind-key q hard-quit
 
-http://www.aaronsw.com/2002/feeds/pgessays.rss
+# g/G to go to top/bottom
+unbind-key g
+unbind-key G
+bind-key g home
+bind-key G end
 
-https://www.benkuhn.net/index.xml
-
-https://lukesmith.xyz/rss.xml "- website"
-
-https://lukesmith.xyz/peertube
-
-https://www.youtube.com/feeds/videos.xml?playlist_id=PL77A337915A76F660
-
-https://www.youtube.com/feeds/videos.xml?playlist_id=PLWKjhJtqVAbmGw5fN5BQlwuug-8bDmabi 
-
-https://www.youtube.com/feeds/videos.xml?playlist_id=PL11qn6zM2Y3bMZdChxEqHKaCaKUjwItGL
-
-
-
-
+# f to follow links (like qutebrowser)
+unbind-key f
+bind-key f goto-url
